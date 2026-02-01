@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+.karla-400 {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.karla-700 {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@theme {
+
+    /* Primary colors */
+
+    --color-cust-green-200: hsl(148, 38%, 91%);
+    --color-cust-green-600: hsl(169, 82%, 27%);
+    --color-red: hsl(0, 66%, 54%);
+
+    /* Neutral colors */
+
+    --color-cust-grey-500: hsl(186, 15%, 59%);
+    --color-cust-grey-900: hsl(187, 24%, 22%);
+
+    /* Font size */
+    --text-labels: 16px;
+
+}
+
+@layer components {
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .error-message {
+        @apply hidden;
+    }
+
+    .required {
+        @apply text-cust-green-600 pl-2;
+    }
+
+    .controller {
+        @apply flex flex-col gap-2 w-full;
+    }
+
+    .cust-outline {
+    @apply outline outline-cust-grey-900/80 rounded-md py-3 px-5 focus-within:outline-cust-green-600/70 focus-within:outline-2 w-full;
+}
+}
+
+label {
+    @apply text-labels;
+}
+
+input[type="radio"] {
+    @apply size-4.5
+}
+
+input[type="radio"], input[type="checkbox"] {
+    @apply accent-cust-green-600
+}
