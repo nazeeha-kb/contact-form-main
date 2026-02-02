@@ -27,10 +27,12 @@ form.addEventListener("submit", (e) => {
 })
 
 const showToast = () => {
-    toast.classList.remove("hidden")
-
+    toast.classList.add("opacity-100")
+    toast.classList.add("top-6")
+    
     setTimeout(() => {
-        toast.classList.add("hidden");
+        toast.classList.remove("opacity-100")
+        toast.classList.remove("top-6")
     }, 2000);
 }
 
