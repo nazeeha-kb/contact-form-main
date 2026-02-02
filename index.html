@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet">
+  <script defer src="main.js"></script>
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -27,61 +28,63 @@
 </head>
 
 <body class="karla-400 bg-cust-green-200 min-h-screen flex-center">
-  <form class="bg-white rounded-2xl m-6 md:p-8 sm:p-7 p-5 text-cust-grey-900 md:space-y-5 space-y-6 md:w-170 w-130">
+  <form class="bg-white rounded-2xl m-6 md:p-8 sm:p-7 p-5 text-cust-grey-900 md:space-y-5 space-y-6 md:w-170 w-130"
+    id="form">
     <h1 class="text-3xl karla-700">Contact Us</h1>
 
     <div class="md:space-y-0 space-y-6 flex md:flex-row flex-col md:gap-4 w-full">
       <div class="controller">
         <label for="first-name">First Name<span class="required">*</span></label>
         <input type="text" id="first-name" aria-invalid="true" aria-describedby="first-name-error" name="first-name"
-          required autocomplete="name" class="cust-outline">
-        <span id="first-name-error" class="error-message">This field is required</span>
+          autocomplete="name" class="cust-outline">
+        <span id="first-name-error" class="error-message"></span>
       </div>
 
       <div class="controller">
         <label for="last-name">Last Name<span class="required">*</span></label>
         <input type="text" id="last-name" aria-invalid="true" aria-describedby="last-name-error" name="last-name"
-          required autocomplete="name" class="cust-outline">
-        <span id="last-name-error" class="error-message">This field is required</span>
+          autocomplete="name" class="cust-outline">
+        <span id="last-name-error" class="error-message"></span>
       </div>
     </div>
 
     <div class="controller">
       <label for="email">Email Address<span class="required">*</span></label>
-      <input type="email" id="email" aria-invalid="true" aria-describedby="email-error" name="email" required
+      <input type="email" id="email" aria-invalid="true" aria-describedby="email-error" name="email"
         autocomplete="email" class="cust-outline">
-      <span id="email-error" class="error-message">This field is required</span>
-      <span id="email-error" class="error-message"> Please enter a valid email address</span>
+      <span id="email-error" class="error-message"></span>
     </div>
 
     <fieldset>
       <legend class="">Query Type</legend>
-      <div class="md:pt-3 pt-5 flex md:flex-row flex-col gap-4">
+      <div class="md:pt-3 pt-5 flex md:flex-row flex-col gap-4" id="query-parent">
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="general"
-            value="general" class="cursor-pointer"><label for="general">General Enquiry</label>
+          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="general" value="general"
+            class="cursor-pointer"><label for="general" class="cursor-pointer">General Enquiry</label>
         </div>
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="support"
-            value="support" class="cursor-pointer"><label for="support">Support Request</label>
+          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="support" value="support"
+            class="cursor-pointer"><label for="support" class="cursor-pointer">Support Request</label>
         </div>
-        <span id="query-error" class="error-message">Please select a query type</span>
       </div>
+      <span id="query-error" class="error-message pt-2"></span>
     </fieldset>
 
     <div class="controller pt-2">
-      <label for="message">Message<span class="required">*</span></label><textarea type="text" name="message"
-        id="message" class="cust-outline md:h-25 h-60"></textarea><span id="message-error" class="error-message">This field is
-        required
+      <label for="message">Message<span class="required">*</span></label>
+      <textarea type="text" name="message" id="message" class="cust-outline md:h-25 h-60" aria-invalid="true"
+        aria-describedby="message-error">
+      </textarea>
+      <span id="message-error" class="error-message">
       </span>
     </div>
 
-    <div class="controller flex-row gap-4 md:py-2 py-5">
+    <div class="space-x-4 md:py-2 py-5">
       <input type="checkbox" name="consent" id="consent" aria-invalid="true" aria-describedby="consent-error"
-        class="cursor-pointer"><label for="consent"> I consent to being contacted by the team
+        class="cursor-pointer"><label for="consent" class="cursor-pointer"> I consent to being contacted by the team
         <span class="required pl-1">*</span>
       </label>
-      <span id="consent-error" class="error-message"> To submit this form, please consent to being contacted
+      <span id="consent-error" class="error-message pt-1">
       </span>
     </div>
 

@@ -38,7 +38,7 @@
     }
 
     .error-message {
-        @apply hidden;
+        @apply hidden text-red-700/70;
     }
 
     .required {
@@ -50,8 +50,8 @@
     }
 
     .cust-outline {
-    @apply outline outline-cust-grey-900/80 rounded-md py-3 px-5 focus-within:outline-cust-green-600/70 focus-within:outline-2 w-full;
-}
+        @apply outline outline-cust-grey-900/80 rounded-md py-3 px-5 focus-within:outline-cust-green-600/70 focus-within:outline-2 w-full;
+    }
 }
 
 label {
