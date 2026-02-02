@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script defer src="main.js"></script>
   <title>Frontend Mentor | Contact form</title>
 
@@ -27,7 +28,7 @@
   </style> -->
 </head>
 
-<body class="karla-400 bg-cust-green-200 min-h-screen flex-center">
+<body class="karla-400 bg-cust-green-200 min-h-screen flex-center relative">
   <form class="bg-white rounded-2xl m-6 md:p-8 sm:p-7 p-5 text-cust-grey-900 md:space-y-5 space-y-6 md:w-170 w-130"
     id="form">
     <h1 class="text-3xl karla-700">Contact Us</h1>
@@ -59,20 +60,19 @@
       <legend class="">Query Type</legend>
       <div class="md:pt-3 pt-5 flex md:flex-row flex-col gap-4" id="query-parent">
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="general" value="general"
-            class="cursor-pointer"><label for="general" class="cursor-pointer">General Enquiry</label>
+          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="general"
+            value="general" class="cursor-pointer"><label for="general" class="cursor-pointer">General Enquiry</label>
         </div>
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="support" value="support"
-            class="cursor-pointer"><label for="support" class="cursor-pointer">Support Request</label>
+          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="support"
+            value="support" class="cursor-pointer"><label for="support" class="cursor-pointer">Support Request</label>
         </div>
       </div>
       <span id="query-error" class="error-message pt-2"></span>
     </fieldset>
 
     <div class="controller pt-2">
-      <label for="message">Message<span class="required">*</span></label>
-      <textarea type="text" name="message" id="message" class="cust-outline md:h-25 h-60" aria-invalid="true"
+      <label for="message">Message<span class="required">*</span></label><textarea type="text" name="message" id="message" class="cust-outline md:h-25 h-60" aria-invalid="true"
         aria-describedby="message-error">
       </textarea>
       <span id="message-error" class="error-message">
@@ -92,8 +92,8 @@
       class="bg-cust-green-600 text-white text-center w-full md:rounded-lg rounded-md py-4 px-2 cursor-pointer">Submit</button>
 
   </form>
-  <article class="hidden" id="toast">
-    <div><i></i>
+  <article class="absolute top-6 bg-cust-green-800 text-white rounded-xl p-6 space-y-2 hidden" id="toast">
+    <div class="flex gap-2 items-center"><i class="fa-regular fa-circle-check text-xl"></i>
       <h2>
         Message Sent!</h2>
     </div>

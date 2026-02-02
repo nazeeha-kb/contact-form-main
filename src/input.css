@@ -20,7 +20,8 @@
 
     --color-cust-green-200: hsl(148, 38%, 91%);
     --color-cust-green-600: hsl(169, 82%, 27%);
-    --color-red: hsl(0, 66%, 54%);
+    --color-cust-green-800: hsl(185, 24%, 22%);
+    --color-cust-red: hsl(0, 66%, 54%);
 
     /* Neutral colors */
 
@@ -38,7 +39,7 @@
     }
 
     .error-message {
-        @apply hidden text-red-700/70;
+        @apply hidden text-cust-red;
     }
 
     .required {

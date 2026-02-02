@@ -14,11 +14,26 @@ const queryParent = document.getElementById("query-parent")
 const message = document.getElementById("message");
 const checkbox = document.getElementById("consent");
 
+const toast = document.getElementById("toast");
+
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     validateInput();
+    if (validateInput()) {
+        showToast()
+    }
     // if success() is true then show toast
 })
+
+const showToast = () => {
+    toast.classList.remove("hidden")
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+    }, 2000);
+}
 
 const querySelected = () => {
     let selected = false;
@@ -51,7 +66,7 @@ const setErrorFields = (element, errorMessage) => {
 
     error.classList.remove("hidden");
     error.classList.add("block")
-    outline.classList.add("outline-red-700");
+    outline.classList.add("outline-cust-red");
     error.innerHTML = `${errorMessage}`;
 }
 
@@ -65,16 +80,16 @@ const setSuccessFields = (element) => {
     const controller = element.parentElement;
     const error = controller.querySelector(".error-message");
     const outline = controller.querySelector(".cust-outline")
-    outline.classList.remove("outline-red-700");
+    outline.classList.remove("outline-cust-red");
     error.classList.add("hidden")
-    console.log("success!")
 }
 
 const validateInput = () => {
-
+    let isValid = true;
     // First name
     if (firstName.value.trim() == '') {
         setErrorFields(firstName, 'This field is required');
+        isValid = false;
     }
     else {
         setSuccessFields(firstName)
@@ -83,6 +98,7 @@ const validateInput = () => {
     // Last name
     if (lastName.value.trim() == '') {
         setErrorFields(lastName, 'This field is required');
+        isValid = false;
     }
     else {
         setSuccessFields(lastName)
@@ -91,9 +107,11 @@ const validateInput = () => {
     // Email
     if (email.value.trim() == '') {
         setErrorFields(email, 'This field is required');
+        isValid = false;
     }
     else if (!validateEmail(email.value.trim())) {
         setErrorFields(email, "please enter a valid email address")
+        isValid = false;
     }
     else {
         setSuccessFields(email)
@@ -102,6 +120,7 @@ const validateInput = () => {
     // query
     if (!querySelected()) {
         setErrorSelection(queryParent, 'Please select a query type');
+        isValid = false;
     }
     else {
         setSuccessSelection(queryParent)
@@ -110,6 +129,7 @@ const validateInput = () => {
     // message
     if (message.value.trim() == '') {
         setErrorFields(message, 'This field is required');
+        isValid = false
     }
     else {
         setSuccessFields(message)
@@ -118,9 +138,11 @@ const validateInput = () => {
     // checkbox
     if (!checkbox.checked) {
         setErrorSelection(checkbox, 'To submit this form, please consent to being contacted');
+        isValid = false;
     }
     else {
         setSuccessSelection(checkbox)
     }
 
+    return isValid;
 }
