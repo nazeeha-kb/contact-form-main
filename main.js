@@ -21,6 +21,7 @@ form.addEventListener("submit", (e) => {
     validateInput();
     if (validateInput()) {
         showToast()
+        form.reset()
     }
     // if success() is true then show toast
 })
@@ -28,9 +29,7 @@ form.addEventListener("submit", (e) => {
 const showToast = () => {
     toast.classList.remove("hidden")
 
-    clearTimeout(toastTimer);
-
-    toastTimer = setTimeout(() => {
+    setTimeout(() => {
         toast.classList.add("hidden");
     }, 2000);
 }
