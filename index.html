@@ -36,14 +36,14 @@
     <div class="md:space-y-0 space-y-6 flex md:flex-row flex-col md:gap-4 w-full">
       <div class="controller">
         <label for="first-name">First Name<span class="required">*</span></label>
-        <input type="text" id="first-name" aria-invalid="true" aria-describedby="first-name-error" name="first-name"
+        <input type="text" id="first-name" aria-describedby="first-name-error" name="first-name"
           autocomplete="name" class="cust-outline">
         <span id="first-name-error" class="error-message"></span>
       </div>
 
       <div class="controller">
         <label for="last-name">Last Name<span class="required">*</span></label>
-        <input type="text" id="last-name" aria-invalid="true" aria-describedby="last-name-error" name="last-name"
+        <input type="text" id="last-name" aria-describedby="last-name-error" name="last-name"
           autocomplete="name" class="cust-outline">
         <span id="last-name-error" class="error-message"></span>
       </div>
@@ -51,7 +51,7 @@
 
     <div class="controller">
       <label for="email">Email Address<span class="required">*</span></label>
-      <input type="email" id="email" aria-invalid="true" aria-describedby="email-error" name="email"
+      <input type="email" id="email" aria-invalid="false" aria-describedby="email-error" name="email"
         autocomplete="email" class="cust-outline">
       <span id="email-error" class="error-message"></span>
     </div>
@@ -60,11 +60,11 @@
       <legend class="">Query Type</legend>
       <div class="md:pt-3 pt-5 flex md:flex-row flex-col gap-4" id="query-parent">
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="general"
+          <input aria-describedby="query-error" type="radio" name="query" id="general"
             value="general" class="cursor-pointer"><label for="general" class="cursor-pointer">General Enquiry</label>
         </div>
         <div class="cust-outline flex items-center gap-3">
-          <input aria-invalid="true" aria-describedby="query-error" type="radio" name="query" id="support"
+          <input aria-describedby="query-error" type="radio" name="query" id="support"
             value="support" class="cursor-pointer"><label for="support" class="cursor-pointer">Support Request</label>
         </div>
       </div>
@@ -73,13 +73,13 @@
 
     <div class="controller pt-2">
       <label for="message">Message<span class="required">*</span></label><textarea type="text" name="message"
-        id="message" class="cust-outline md:h-25 h-60" aria-invalid="true" aria-describedby="message-error"></textarea>
+        id="message" class="cust-outline md:h-25 h-60" aria-describedby="message-error"></textarea>
       <span id="message-error" class="error-message">
       </span>
     </div>
 
     <div class="space-x-4 md:py-2 py-5">
-      <input type="checkbox" name="consent" id="consent" aria-invalid="true" aria-describedby="consent-error"
+      <input type="checkbox" name="consent" id="consent" aria-describedby="consent-error"
         class="cursor-pointer"><label for="consent" class="cursor-pointer"> I consent to being contacted by the team
         <span class="required pl-1">*</span>
       </label>

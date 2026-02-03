@@ -112,6 +112,7 @@ const validateInput = () => {
     }
     else if (!validateEmail(email.value.trim())) {
         setErrorFields(email, "please enter a valid email address")
+        email.setAttribute("aria-invalid", "true")
         isValid = false;
     }
     else {
